@@ -6,8 +6,8 @@
   "d1_databases": [
     {
       "binding": "DB",
-      "database_name": "contacts-sync",
-      "database_id": "0c0caaa4-769f-4ea1-a06a-ba519a1df531"
+      "database_name": "contact-sync-db",
+      "database_id": "70b18768-f5f5-478a-a8b7-b2d959b70196"
     }
   ],
   "r2_buckets": [
