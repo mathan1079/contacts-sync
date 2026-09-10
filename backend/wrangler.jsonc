@@ -18,7 +18,8 @@
   ],
 
   "vars": {
-    "ENVIRONMENT": "production"
+    "ENVIRONMENT": "production",
+	"SYNC_API_TOKEN" : "4165018f7ba850981e40031586c982a27186495e57b319626d283befa488e943e9459dbb2a369cd7a77f5da66ce07ded1f23c0c1ec75943c08ec11b8a12def0539d29bcae87e0942f21a34bae3070b8b8eb08fec49ea7940d652a46410ead98cb75a3ee843976ad92feb882ac256b52c2d649a3248b7f700a51da2438c98b642"
   },
   "observability": {
     "logs": {
