@@ -114,23 +114,18 @@ export default {
 			}
 
 			// -----------------------------------------------
-			// GET CONTACTS - DEBUG / ADMIN
+			// GET CONTACTS
 			// -----------------------------------------------
 
-			const contactsMatch = url.pathname.match(/^\/api\/v1\/devices\/([^/]+)\/contacts$/);
-
-			if (request.method === 'GET' && contactsMatch) {
+			if (request.method === 'GET' && url.pathname === '/api/v1/contacts') {
 				const authFailure = authorize(request, env);
 
 				if (authFailure) {
 					return authFailure;
 				}
 
-				const deviceId = decodeURIComponent(contactsMatch[1]);
-
-				return await getDeviceContacts(deviceId, url, env);
+				return await getContacts(url, env);
 			}
-
 			return json(
 				{
 					success: false,
@@ -645,18 +640,8 @@ async function saveSyncBackup(payload: ContactSyncRequest, syncId: string, times
 // GET CONTACTS
 // ======================================================
 
-async function getDeviceContacts(deviceId: string, url: URL, env: Env): Promise<Response> {
-	if (!isValidDeviceId(deviceId)) {
-		return json(
-			{
-				success: false,
-				message: 'Invalid device ID',
-			},
-			400,
-		);
-	}
-
-	const requestedLimit = Number(url.searchParams.get('limit') || '100');
+async function getContacts(url: URL, env: Env): Promise<Response> {
+	const requestedLimit = Number(url.searchParams.get('limit') || '500');
 
 	const requestedOffset = Number(url.searchParams.get('offset') || '0');
 
@@ -690,8 +675,6 @@ async function getDeviceContacts(deviceId: string, url: URL, env: Env): Promise<
 
         FROM contacts
 
-        WHERE device_id = ?
-
         ORDER BY display_name COLLATE NOCASE
 
         LIMIT ?
@@ -700,7 +683,7 @@ async function getDeviceContacts(deviceId: string, url: URL, env: Env): Promise<
         `,
 	)
 
-		.bind(deviceId, limit, offset)
+		.bind(limit, offset)
 
 		.all();
 
@@ -729,11 +712,11 @@ async function getDeviceContacts(deviceId: string, url: URL, env: Env): Promise<
 	return json({
 		success: true,
 
-		deviceId,
-
 		limit,
 
 		offset,
+
+		count: contacts.length,
 
 		contacts,
 	});
