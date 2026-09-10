@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">Contact Sync</string>
+    <string name="account_name">Contact Sync</string>
+    <string name="create_account">Create Contact Sync Account</string>
+    <string name="open_sync_settings">Open Android Sync Settings</string>
+    <string name="sync_now">Sync Contacts Now</string>
+
+    <string name="account_type" translatable="false">
+        dev.mathankumar.android.contactsync.contact
+    </string>
+
+    <!-- We are syncing Android Contacts -->
+    <string name="contacts_authority" translatable="false">
+        com.android.contacts
+    </string>
 </resources>
