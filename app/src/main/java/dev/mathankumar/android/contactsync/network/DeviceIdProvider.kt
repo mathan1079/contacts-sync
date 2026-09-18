@@ -3,6 +3,7 @@ package dev.mathankumar.android.contactsync.network
 
 import android.content.Context
 import java.util.UUID
+import androidx.core.content.edit
 
 object DeviceIdProvider {
 
@@ -40,12 +41,12 @@ object DeviceIdProvider {
 
 
         preferences
-            .edit()
-            .putString(
-                KEY_DEVICE_ID,
-                newId
-            )
-            .apply()
+            .edit {
+                putString(
+                    KEY_DEVICE_ID,
+                    newId
+                )
+            }
 
 
         return newId

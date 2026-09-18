@@ -36,7 +36,7 @@ class ContactAccountAuthenticator(
     ): Bundle {
 
         /*
-         * If Settings -> Add account -> Dotworld Contact Sync
+         * If Settings -> Add account -> Contact Sync
          * is clicked, open our MainActivity.
          */
         val intent =

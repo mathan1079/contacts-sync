@@ -5,17 +5,17 @@ import android.accounts.AccountManager
 import android.content.ContentResolver
 import android.content.Context
 import android.os.Bundle
+import dev.mathankumar.android.contactsync.constants.AppConstants
 
 object AccountHelper {
 
-    const val ACCOUNT_TYPE =
-        "dev.mathankumar.android.contactsync"
+    const val ACCOUNT_TYPE = AppConstants.ACCOUNT_TYPE
 
-    const val ACCOUNT_NAME =
-        "Mathan Contact Sync"
+    const val ACCOUNT_NAME = AppConstants.ACCOUNT_NAME
 
-    const val AUTHORITY =
-        "com.android.contacts"
+    const val AUTHORITY = AppConstants.CONTACT_AUTHORITY
+
+    const val DUMMY_AUTHORITY = AppConstants.DUMMY_AUTHORITY
 
 
     fun getAccount(
@@ -47,6 +47,24 @@ object AccountHelper {
                 existing,
                 AUTHORITY,
                 1
+            )
+
+            ContentResolver.setIsSyncable(
+                existing,
+                DUMMY_AUTHORITY,
+                1
+            )
+
+            ContentResolver.setSyncAutomatically(
+                existing,
+                AUTHORITY,
+                true
+            )
+
+            ContentResolver.setSyncAutomatically(
+                existing,
+                DUMMY_AUTHORITY,
+                true
             )
 
             ensurePeriodicSync(
@@ -100,6 +118,12 @@ object AccountHelper {
             1
         )
 
+        ContentResolver.setIsSyncable(
+            account,
+            DUMMY_AUTHORITY,
+            1
+        )
+
 
         /*
          * Initially OFF.
@@ -109,6 +133,12 @@ object AccountHelper {
         ContentResolver.setSyncAutomatically(
             account,
             AUTHORITY,
+            true
+        )
+
+        ContentResolver.setSyncAutomatically(
+            account,
+            DUMMY_AUTHORITY,
             true
         )
 

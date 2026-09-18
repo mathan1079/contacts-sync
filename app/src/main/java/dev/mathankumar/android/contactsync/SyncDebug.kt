@@ -4,6 +4,7 @@ import android.accounts.AccountManager
 import android.content.ContentResolver
 import android.content.Context
 import android.util.Log
+import dev.mathankumar.android.contactsync.constants.AppConstants
 
 object SyncDebug {
 
@@ -11,11 +12,9 @@ object SyncDebug {
         "SYNC_DEBUG"
 
 
-    const val ACCOUNT_TYPE =
-        "dev.mathankumar.android.contactsync"
+    const val ACCOUNT_TYPE = AppConstants.ACCOUNT_TYPE
 
-    const val AUTHORITY =
-        "com.android.contacts"
+    const val AUTHORITY = AppConstants.CONTACT_AUTHORITY
 
 
     fun dump(

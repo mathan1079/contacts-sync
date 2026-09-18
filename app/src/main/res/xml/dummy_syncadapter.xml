@@ -2,9 +2,9 @@
 <sync-adapter xmlns:android="http://schemas.android.com/apk/res/android"
     android:accountType="dev.mathankumar.android.contactsync"
     android:allowParallelSyncs="false"
-    android:contentAuthority="com.android.contacts"
+    android:contentAuthority="dev.mathankumar.android.contactsync.dummy"
     android:isAlwaysSyncable="true"
-    android:supportsUploading="true"
+    android:supportsUploading="false"
     android:userVisible="true"
-    android:label="@string/contacts"
+    android:label="@string/sync_status"
     android:icon="@mipmap/ic_launcher" />

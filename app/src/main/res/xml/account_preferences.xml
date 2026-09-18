@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- This adds a clickable row in System Settings -->
+    <Preference
+        android:key="app_settings"
+        android:title="App Settings"
+        android:summary="View sync status and logs in the app">
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetPackage="dev.mathankumar.android.contactsync"
+            android:targetClass="dev.mathankumar.android.contactsync.MainActivity" />
+    </Preference>
+
+    <!-- You could also add a Privacy Policy link -->
+    <Preference
+        android:title="Privacy Policy">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://mathankumar.dev/privacy" />
+    </Preference>
+
+</PreferenceScreen>

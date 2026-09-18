@@ -200,6 +200,11 @@ class ContactSyncAdapter(
                     deleteCount = 0
                 )
 
+                /*
+                 * Signal success to the system so "Last synced" time updates.
+                 */
+                syncResult?.stats?.numInserts = 0
+
                 return
             }
 

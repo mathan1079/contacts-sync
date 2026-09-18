@@ -20,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
-            android:text="Dotworld Contact Sync"
+            android:text="Contact Sync"
 
             android:textSize="26sp"
 
@@ -84,7 +84,7 @@ How it works:
 
 1. Create the account.
 2. Open Android Sync Settings.
-3. Select Dotworld Contact Sync.
+3. Select Contact Sync.
 4. Enable Contacts.
 5. Android will synchronize contacts approximately every hour.
 

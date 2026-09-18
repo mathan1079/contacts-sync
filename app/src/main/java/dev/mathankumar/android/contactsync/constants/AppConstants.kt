@@ -11,10 +11,10 @@ object AppConstants {
      * syncadapter.xml
      */
     const val ACCOUNT_TYPE =
-        "dev.mathankumar.android.contactsync.account"
+        "dev.mathankumar.android.contactsync"
 
     const val ACCOUNT_NAME =
-        "Mathan Contact Sync"
+        "Contact Sync"
 
 
     /**
@@ -22,6 +22,9 @@ object AppConstants {
      */
     const val CONTACT_AUTHORITY =
         ContactsContract.AUTHORITY
+
+    const val DUMMY_AUTHORITY =
+        "dev.mathankumar.android.contactsync.dummy"
 
 
     /**

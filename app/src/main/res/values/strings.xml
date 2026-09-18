@@ -4,9 +4,11 @@
     <string name="create_account">Create Contact Sync Account</string>
     <string name="open_sync_settings">Open Android Sync Settings</string>
     <string name="sync_now">Sync Contacts Now</string>
+    <string name="contacts">Contacts</string>
+    <string name="sync_status">Dummy Sync Status</string>
 
     <string name="account_type" translatable="false">
-        dev.mathankumar.android.contactsync.contact
+        dev.mathankumar.android.contactsync
     </string>
 
     <!-- We are syncing Android Contacts -->
